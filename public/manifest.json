@@ -1,0 +1,15 @@
+{
+  "short_name": "__name__",
+  "name": "__name__",
+  "icons": [
+    {
+      "src": "//imgcache.qq.com/app/logo.svg",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
