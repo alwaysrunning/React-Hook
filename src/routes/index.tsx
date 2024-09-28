@@ -1,7 +1,6 @@
 import { lazy } from 'react';
 import type { RouteProps } from '@/typings';
 
-
 const Login = lazy(() => import('@/pages/Login'));
 const NotFound = lazy(() => import('@/pages/NotFound'));
 const Home = lazy(() => import('@/pages/Request'));

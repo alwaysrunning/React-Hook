@@ -1,12 +1,7 @@
-import {
-  ServiceBase,
-  ServiceAPI,
-} from '@/typings';
+import { ServiceBase, ServiceAPI } from '@/typings';
 
 export interface AuthService {
-  FetchUser: ServiceBase<any,
-    any
-  >;
+  FetchUser: ServiceBase<any, any>;
 }
 
 export const authService: {

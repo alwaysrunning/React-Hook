@@ -16,7 +16,7 @@ axios.interceptors.request.use(
     config.headers!['x-requested-with'] = 'XMLHttpRequest';
     return config;
   },
-  (error) => Promise.reject(error),
+  (error) => Promise.reject(error)
 );
 
 axios.interceptors.response.use(
@@ -29,21 +29,22 @@ axios.interceptors.response.use(
     return res;
   },
   (error) => {
-
     if (error?.response?.status === 401) {
       window.location.replace(`/login?`);
     } else if (error?.response?.status === 403) {
       window.location.replace(`/noAccess`);
     }
     return Promise.reject(error);
-  },
+  }
 );
 
 const useAxios = makeUseAxios({ axios });
 
 const defaultMethod = 'get';
 
-export const useRequest = <T extends RequestParmas>(...params: ParamFromAxios): [any, any, any] => {
+export const useRequest = <T extends RequestParmas>(
+  ...params: ParamFromAxios
+): [any, any, any] => {
   const [config, extra]: any = params;
   const isString = typeof config === 'string';
   const data: any = {
@@ -55,14 +56,20 @@ export const useRequest = <T extends RequestParmas>(...params: ParamFromAxios): 
     ...(!isString && { config }),
     url: isString ? config : config?.url,
     data,
-  }
+  };
 
-  const [resp, refetch, manualCancel] = useAxios<T['Response'], T['Body'], T['Error']>(configs, {
+  const [resp, refetch, manualCancel] = useAxios<
+    T['Response'],
+    T['Body'],
+    T['Error']
+  >(configs, {
     autoCancel: false,
     ...(extra || {}),
   });
 
-  const refetchMethod = (newData?: Record<string, any> | undefined): AxiosPromise => {
+  const refetchMethod = (
+    newData?: Record<string, any> | undefined
+  ): AxiosPromise => {
     const refetchConfig: any = {};
 
     if ((config.method || defaultMethod).toUpperCase() === 'GET') {

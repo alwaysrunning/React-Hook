@@ -1,5 +1,4 @@
-
-import {Layout } from 'antd';
+import { Layout } from 'antd';
 
 const { Header, Content } = Layout;
 
@@ -19,9 +18,7 @@ const contentStyle: React.CSSProperties = {
   color: '#fff',
 };
 
-
 const AppLayout = ({ children }) => {
-
   return (
     <Layout>
       <Header style={headerStyle}>Header</Header>

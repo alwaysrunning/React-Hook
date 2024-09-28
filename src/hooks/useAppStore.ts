@@ -5,7 +5,6 @@ import { isDev } from '@/configs';
 
 type Theme = 'dark' | 'light';
 
-
 interface AppStore {
   theme: Theme;
   setTheme: (theme: Theme) => void;

@@ -5,7 +5,6 @@ import useErrorBoundary from 'use-error-boundary';
 import { Layout, PageLoading } from '@/components';
 import { REACT_APP_BASENAME } from '@/configs';
 
-
 const RootRouter = () => {
   const { ErrorBoundary } = useErrorBoundary();
   return (
