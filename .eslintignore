@@ -1,0 +1,6 @@
+node_modules/**
+dist/**
+public/**
+mock
+src/enums/apply.ts
+src/enums/auth.ts
