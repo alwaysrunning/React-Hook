@@ -29,6 +29,7 @@
   "scripts": {
     "analyze": "source-map-explorer 'build/static/js/*.js' --only-mapped",
     "start": "craco start",
+    "dev": "craco start",
     "build": "craco build",
     "test": "craco test",
     "commit": "git cz",
